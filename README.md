@@ -5,3 +5,4 @@ Arquivos sendo desenvolvidos durante o aprendizado do curso (Programação para 
   - Triggers.
   - Packages.
   - Segurança do Banco.
+  - Tunning.

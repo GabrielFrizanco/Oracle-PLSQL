@@ -1,0 +1,18 @@
+--- CRIE UMA VISÃO PARA VERIFICAR A QUANTIDADE DE PRODUTOS EM CADA UF
+
+CREATE OR REPLACE VIEW VW_SUM_PROD AS
+
+SELECT SUM(quant_prod) AS QUANT, c.uf AS UF
+
+FROM RegistroProdutos rp
+
+INNER JOIN Cidades c ON c.id_cidade = rp.id_cidade
+
+GROUP BY c.uf;
+
+
+
+
+SELECT * FROM VW_SUM_PROD
+
+WHERE uf = 'SP';

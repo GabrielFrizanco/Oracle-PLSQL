@@ -1,0 +1,71 @@
+--- CRIE UM PACOTE PARA PEGAR O NOME DO GENERO ATRAVÉS DO CÓDIGO
+CREATE OR REPLACE PACKAGE genero AS
+
+    FUNCTION getGenero(V_COD_GEN NUMBER)
+
+
+        RETURN VARCHAR2;
+
+END genero;
+
+
+
+CREATE OR REPLACE PACKAGE BODY genero AS
+
+    FUNCTION getGenero(V_COD_GEN NUMBER) RETURN VARCHAR2 IS
+
+        
+        V_NM_GENERO VARCHAR2(100) := NULL;
+
+BEGIN
+
+	SELECT ds_genero
+
+        INTO V_NM_GENERO
+
+        FROM Generos
+
+        WHERE cod_genero = V_COD_GEN;
+
+
+        
+RETURN V_NM_GENERO;
+
+    END;
+
+END genero;
+
+    
+ 
+--- CHAMANDO A PACKAGE E A FUNCTION   
+
+DECLARE
+
+
+  V_CODIGO_GENERO NUMBER := 9;
+
+  V_NOME_GENERO   VARCHAR2(100) := NULL;
+
+
+BEGIN
+
+    
+
+    V_NOME_GENERO := genero.getGenero(V_CODIGO_GENERO); --- RETORNARÁ DE ACORDO COM O CÓDIGO
+
+
+
+    DBMS_OUTPUT.PUT_LINE('Código: ' || V_CODIGO_GENERO);
+
+    DBMS_OUTPUT.PUT_LINE('Gênero: ' || V_NOME_GENERO);
+
+
+
+END;
+
+
+
+
+
+--- OUTRA FORMA DE CHAMAR
+SELECT genero.getGenero(29) FROM DUAL;

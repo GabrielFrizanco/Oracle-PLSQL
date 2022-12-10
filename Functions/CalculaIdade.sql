@@ -1,6 +1,6 @@
 -- DESAFIO: CÁLCULE A SUA IDADE
 
-CREATE OR REPLACE FUNCTION fnc_idade(ano_nasc in number) RETURN NUMBER IS
+CREATE OR REPLACE FUNCTION Func_Idade(ano_nasc in number) RETURN NUMBER IS
 
     idade NUMBER(4) := 0;
 

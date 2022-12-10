@@ -1,0 +1,36 @@
+--- CRIE UMA PROCEDURE PARA VERIFICAR A QUANTIDADE DE PRODUTOS, SENDO ASSIM APENAS PASSANDO UM PARÂMETRO
+CREATE OR REPLACE FUNCTION Func_Quant_Prod(uf_est IN VARCHAR) RETURN NUMBER IS
+
+
+
+V_QUANT_PROD NUMBER(3) := 0;
+
+
+
+BEGIN
+
+
+    
+SELECT COUNT(*)
+
+    INTO V_QUANT_PROD
+
+    FROM RegistroProdutos rp
+
+    INNER JOIN Cidades c ON rp.id_cidade = c.id_cidade
+
+    INNER JOIN Estados e ON c.uf = e.uf
+
+    WHERE e.uf = uf_est
+
+    GROUP BY e.uf;
+
+
+    
+RETURN V_QUANT_PROD;
+
+
+END;
+
+--- EXECUTAR FUNCTION
+SELECT Func_Quant_Prod('SP') FROM DUAL;

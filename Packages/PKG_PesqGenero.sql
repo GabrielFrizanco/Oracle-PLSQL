@@ -36,4 +36,4 @@ BEGIN
 END;
 
 --- OUTRA FORMA DE CHAMAR
-SELECT genero.getGenero(29) FROM DUAL;
+SELECT genero.getGenero(29) AS genero FROM DUAL;

@@ -4,5 +4,3 @@ Arquivos sendo desenvolvidos durante o aprendizado do curso (Programação para 
 ## Atualmente aprofundando em:
   - Triggers.
   - Packages.
-  - Segurança do Banco.
-  - Tunning.

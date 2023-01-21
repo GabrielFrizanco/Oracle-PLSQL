@@ -1,5 +1,5 @@
 # Oracle-PL-SQL
-Arquivos sendo desenvolvidos durante o aprendizado do curso (Programação para Banco de Dados - PL/SQL) e estudos por fora.
+Arquivos sendo desenvolvidos durante o meu aprendizado.
 
 ## Atualmente aprofundando em:
   - Triggers.

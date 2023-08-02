@@ -30,20 +30,17 @@ Create or Replace Procedure Prc_Fecha_Folha(p_ano in number, p_mes in number) is
    For R_Func in C_Func Loop
 
        v_total := v_total + 1;
-
        v_val_liquido := 0;
-
        v_val_inss := (R_Func.val_salario * .11);
-
        v_val_fgts := (R_Func.val_salario * .08);
  
        --- Regra na Tabela de IR: Até 1.000,00  IR de 10%   e acima de 1.000,00 20%
 
-       If R_Func.Val_Salario <= 1000 then
+       if R_Func.Val_Salario <= 1000 then
           v_val_ir := (R_Func.val_salario * .10);
-       Else
+       else
          v_val_ir := (R_Func.val_salario * .20);
-       End if;
+       end if;
 
        --- Regra: Bonus de 500,00 para cargo de gerente
         
@@ -51,8 +48,7 @@ Create or Replace Procedure Prc_Fecha_Folha(p_ano in number, p_mes in number) is
           v_val_bonus := 500;
        else
           v_val_bonus := 0;
-
-       End if;
+       end if;
 
        ---
        --- Calcular Salario Liquido: v_val_liquido = (R_Func.val_salario - v_val_inss - v_val_fgts - v_val_ir) + v_val_bonus;

@@ -41,4 +41,4 @@ begin
   		dbms_output.put_line('Departamento: ' || f1.departamento);
   		dbms_output.put_line('Salário: ' || f1.salario);
     end loop;
-end;
+end prc_funcionario;

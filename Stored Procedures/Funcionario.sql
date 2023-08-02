@@ -1,3 +1,5 @@
+-- Exercício: Faça uma busca de um funcionário pelo id dele
+-- Banco de dados utilizado: RH
 create or replace procedure prc_funcionario(in p_func number) is
 
 -- declare (APENAS TESTE)
